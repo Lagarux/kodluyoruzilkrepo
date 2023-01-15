@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&display=swap');
+
+html{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100%;
+}
+
+.bd{
+   
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        transition: all 0.7s ease-in-out;
+        overflow: hidden;
+        background: #FFF;
+      
+}
+
+.circle{
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    background-color: gold;
+    border:7px solid rgb(96, 29, 130);
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    animation-name: littleshow;
+    animation-duration: 1.7s;
+    animation-timing-function: ease-in-out;
+    transition: all 0.7s;
+    cursor: pointer;
+}
+
+.circle:hover{
+    width: 350px;
+    height: 350px;
+    background-color: rgb(248, 78, 78);
+    border-color: aqua;
+    transform: rotate(360deg);
+}
+
+
+@keyframes littleshow {
+    from {left: -65%;transform: rotate(0);}
+    to {left: 0;transform: rotate(360deg);}
+}
+
+
+
+.circle:hover .cheer{
+    font-size: 35px;
+    color: white;
+}
+
+.circle:hover ~ .bd{
+    background: black !important;
+}
+
+.cheer{
+    font-size: 27px;
+    font-family: 'Playfair Display', serif;
+    animation-name: showText;
+    animation-timing-function: ease-in-out;
+    animation-duration: 3.3s;
+    transition:0.5s;
+
+}
+
+@keyframes showText {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
